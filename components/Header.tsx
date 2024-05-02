@@ -1,9 +1,9 @@
 import Image from "next/image";
-
-import { Button } from "./ui/button";
+import Link from "next/link";
 
 import MyAi from "@/public/myai.webp";
 
+import { Button } from "./ui/button";
 import { FaLaptop } from "react-icons/fa";
 
 const Header = () => {
@@ -17,10 +17,12 @@ const Header = () => {
         <h1 className="my-5 text-xl">
           Chat, Snap, and video call your friends from <br /> wherever you are.
         </h1>
-        <Button className="gap-2 rounded-full">
-          <FaLaptop />
-          Login to chat
-        </Button>
+        <Link href={"/login"}>
+          <Button className="gap-2 rounded-full">
+            <FaLaptop />
+            Login to chat
+          </Button>
+        </Link>
       </div>
 
       {/* Col 2 */}

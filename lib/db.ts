@@ -9,9 +9,7 @@ const connectDB = async () => {
   }
 
   try {
-    const res = await mongoose.connect(
-      "mongodb+srv://chaykov:UfRpWbm2AcC7rpOz@cluster0.cuw6ctq.mongodb.net/"
-    );
+    const res = await mongoose.connect(process.env.MONGO_URI!);
     isConnected = res.connection;
     console.log("MongoDB has been connected successfully!");
     return isConnected;

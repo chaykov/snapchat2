@@ -10,7 +10,7 @@ import { AiOutlineMessage } from "react-icons/ai";
 
 const Header = async () => {
   const authUser = await auth();
-  console.log(authUser);
+  console.log(authUser?.user);
 
   return (
     <div className="flex justify-between items-center max-w-6xl mx-auto">

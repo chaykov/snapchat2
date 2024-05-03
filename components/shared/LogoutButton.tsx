@@ -2,22 +2,10 @@ import { auth, signOut } from "@/auth";
 import React from "react";
 import { Button } from "../ui/button";
 import { IoMdLogOut } from "react-icons/io";
-import { redirect } from "next/navigation";
+import { logoutHandler } from "@/lib/serveractions";
 
 const LogoutButton = async () => {
   // const authUser = await auth();
-
-  const logoutHandler = async () => {
-    "use server";
-    try {
-      await signOut();
-    } catch (error) {
-      console.log(error);
-      throw error;
-    }
-
-    redirect("/login");
-  };
 
   return (
     <form action={logoutHandler}>
